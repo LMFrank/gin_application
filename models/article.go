@@ -1,10 +1,5 @@
 package models
 
-import (
-	"github.com/jinzhu/gorm"
-	"time"
-)
-
 type Article struct {
 	Model
 
@@ -74,6 +69,7 @@ func ExistArticleByID(id int) bool {
 	return false
 }
 
+/*
 func (article *Article) BeforeCreate(scope *gorm.Scope) error {
 	scope.SetColumn("CreatedOn", time.Now().Unix())
 
@@ -85,3 +81,4 @@ func (article *Article) BeforeUpdate(scope *gorm.Scope) error {
 
 	return nil
 }
+*/
