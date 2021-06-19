@@ -3,21 +3,26 @@ package routers
 import (
 	"github.com/LMFrank/gin_project/middleware/jwt"
 	"github.com/LMFrank/gin_project/pkg/setting"
+	"github.com/LMFrank/gin_project/pkg/upload"
 	"github.com/LMFrank/gin_project/routers/api"
 	v1 "github.com/LMFrank/gin_project/routers/api/v1"
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
+	"net/http"
 )
 
 func InitRouter() *gin.Engine {
 	r := gin.New()
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
-	gin.SetMode(setting.RunMode)
+	gin.SetMode(setting.ServerSetting.RunMode)
+
+	r.StaticFS("/upload/images", http.Dir(upload.GetImageFullPath()))
 
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	r.GET("/auth", api.GetAuth)
+	r.POST("/upload", api.UploadImage)
 
 	apiv1 := r.Group("/api/v1")
 	apiv1.Use(jwt.JWT())
