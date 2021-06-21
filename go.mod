@@ -33,11 +33,7 @@ replace (
 	github.com/LMFrank/gin_project/conf => ./go-application/gin_project/pkg/conf
 	github.com/LMFrank/gin_project/middleware => ./go-application/gin_project/middleware
 	github.com/LMFrank/gin_project/models => ./go-application/gin_project/models
-	github.com/LMFrank/gin_project/pkg/e => ./go-application/gin-project/pkg/e
-	github.com/LMFrank/gin_project/pkg/file => ./go-application/gin_project/pkg/file
-	github.com/LMFrank/gin_project/pkg/logging => ./go-application/gin_project/pkg/logging
-	github.com/LMFrank/gin_project/pkg/setting => ./go-application/gin_project/pkg/setting
-	github.com/LMFrank/gin_project/pkg/upload => ./go-application/gin_project/pkg/upload
-	github.com/LMFrank/gin_project/pkg/util => ./go-application/gin_project/pkg/util
+	github.com/LMFrank/gin_project/pkg => ./go-application/gin-project/pkg
+	github.com/LMFrank/gin_project/service => ./go-application/gin-project/service
 	github.com/LMFrank/gin_project/routers => ./go-application/gin_project/routers
 )
