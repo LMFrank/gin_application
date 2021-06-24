@@ -3,17 +3,30 @@ package main
 import (
 	"fmt"
 	"github.com/LMFrank/gin_project/models"
+	"github.com/LMFrank/gin_project/pkg/gredis"
 	"github.com/LMFrank/gin_project/pkg/logging"
 	"github.com/LMFrank/gin_project/pkg/setting"
+	"github.com/LMFrank/gin_project/pkg/util"
 	"github.com/LMFrank/gin_project/routers"
+	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 )
 
-func main() {
+func init() {
 	setting.Setup()
 	models.Setup()
 	logging.Setup()
+	gredis.Setup()
+	util.Setup()
+}
+
+// @title Golang Gin API
+// @version 1.0
+// @description An example of gin
+// @termsOfService https://github.com/LMFrank/gin_project
+func main() {
+	gin.SetMode(setting.ServerSetting.RunMode)
 
 	routersInit := routers.InitRouter()
 	readTimeout := setting.ServerSetting.ReadTimeout

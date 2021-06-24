@@ -57,14 +57,15 @@ var RedisSetting = &Redis{}
 var cfg *ini.File
 
 func Setup() {
-	_, err := ini.Load("conf/app.ini")
+	var err error
+	cfg, err = ini.Load("conf/app.ini")
 	if err != nil {
 		log.Fatalf("Fail to parse 'conf/app.ini': %v", err)
 	}
 
 	mapTo("app", AppSetting)
 	mapTo("server", ServerSetting)
-	mapTo("server", DatabaseSetting)
+	mapTo("database", DatabaseSetting)
 	mapTo("redis", RedisSetting)
 
 	AppSetting.ImageMaxSize = AppSetting.ImageMaxSize * 1024 * 1024

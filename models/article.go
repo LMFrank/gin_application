@@ -99,17 +99,3 @@ func ExistArticleByID(id int) (bool, error) {
 
 	return false, nil
 }
-
-/*
-func (article *Article) BeforeCreate(scope *gorm.Scope) error {
-	scope.SetColumn("CreatedOn", time.Now().Unix())
-
-	return nil
-}
-
-func (article *Article) BeforeUpdate(scope *gorm.Scope) error {
-	scope.SetColumn("ModifiedOn", time.Now().Unix())
-
-	return nil
-}
-*/

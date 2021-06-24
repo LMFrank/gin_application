@@ -1,6 +1,7 @@
 package routers
 
 import (
+	_ "github.com/LMFrank/gin_project/docs"
 	"github.com/LMFrank/gin_project/middleware/jwt"
 	"github.com/LMFrank/gin_project/pkg/setting"
 	"github.com/LMFrank/gin_project/pkg/upload"

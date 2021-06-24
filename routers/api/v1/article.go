@@ -6,6 +6,7 @@ import (
 	"github.com/LMFrank/gin_project/pkg/setting"
 	"github.com/LMFrank/gin_project/pkg/util"
 	"github.com/LMFrank/gin_project/service/article_service"
+	"github.com/LMFrank/gin_project/service/tag_service"
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"
 	"github.com/unknwon/com"
